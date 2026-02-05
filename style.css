@@ -1,5 +1,5 @@
 body {
-    font: 20px "Gill Sans", Verdana, sans-serif;
+    font-family: 80px "Poppins", Arial, sans-serif;
     line-height: 1.8;
     color: #000000;
     background-color: #BDDDFC;
@@ -10,7 +10,11 @@ body {
   padding: 2% 10%;;
 }
 
-p {font-size: 16px;}
+h1, h2, h3, h4 {
+  font-family: "Playfair Display", serif;
+}
+
+p {font-size: 20px;}
 .margin {margin-bottom: 30px;}
 
 a {
@@ -44,8 +48,8 @@ nav {
   border: 3px outset #a3a3a3;
   border-radius: 20px;
   padding: 10px 30px;
-  background-color: #a3a3a3;
-  color: #6A89A7;
+  background-color: #6A89A7;
+  color: #000000;
   transition: 0.3s;
 }
 
@@ -53,7 +57,7 @@ nav {
   border: 3px outset #FFFFFF;
   border-radius: 20px;
   padding: 10px 30px;
-  background-color: #a3a3a3;
+  background-color: #6A89A7;
   transition: 0.3s;
 }
 
@@ -61,8 +65,8 @@ nav {
   border: 3px outset #FFFFFF;
   border-radius: 40px;
   padding: 10px 30px;
-  background-color: #a3a3a3;
-  color: #000000;
+  background-color: #6A89A7;
+  color: #6A89A7;
   transition: 0.3s;
 }
 
@@ -70,7 +74,7 @@ nav {
   border: 3px inset #FFFFFF;
   border-radius: 40px;
   padding: 10px 30px;
-  background-color: #a3a3a3;
+  background-color: #6A89A7;
   transition: 0.3s;
 }
 
