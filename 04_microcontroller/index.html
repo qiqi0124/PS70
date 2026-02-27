@@ -32,7 +32,7 @@
 This week's task was to program a microcontroller to do something. As someone who is always getting yelled at by my parents for working in the dark, I thought it would be cool to build a light detecting circuit. Watch the video below for the final product!
 <p class="margin">   </p>
 <p class="margin">   </p>
-<video width="320" height="240" controls>
+<video width="400" height="300" controls>
   <source src="ldrvid.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
@@ -40,6 +40,18 @@ Your browser does not support the video tag.
 <p class="margin">   </p>
 To build this circuit, I used an ESP32 microcontroller, three 1k ohm resistors, one GL5516 photoresistor, one 220 ohm resistor, and 3 leds (red, yellow, and green). When the circuit detects low lighting, only the red LED will be on. As brightness increases to a mid-range level, the yellow LED will then also light up. At the desired brightness, all three leds, including the green LED, will be on. 
 <p class="margin">   </p>
+<p class="margin">   </p>
+<image style = "width: 50%"src = "ldr_circuit.jpg" alt = "ldrcircuit"> </image>
+<p class="margin">   </p>
+<p class="margin">   </p>
+The microcontroller was able to take in the changing resistance of the photoresistor and depending on the value, offer power to each of the LEDs. I tested the circuit a few times and decided on a threshold for the upper and lower bound of each resistor.
+<p class="margin">   </p>
+<p class="margin">   </p>
+<image style = "width: 50%"src = "ldr_code.jpg" alt = "ldrcode"> </image>
+<p class="margin">   </p>
+<p class="margin">   </p>
+<p class="margin">   </p>
+Low Light vs Bright Scenarios
 <p class="margin">   </p>
 <image style = "width: 25%"src = "ldrred.jpg" alt = "ldrred"> </image>
 <image style = "width: 25%"src = "ldrgreen.jpg" alt = "ldrgreen"> </image>
