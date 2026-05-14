@@ -108,3 +108,16 @@ code {
 #aboutme {
   padding: 20px;
 }
+
+.codebox {
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  padding: 18px;
+  border-radius: 12px;
+  overflow-x: auto;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: left;
+  white-space: pre;
+}

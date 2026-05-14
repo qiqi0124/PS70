@@ -19,7 +19,7 @@
 </nav>
 
 <body>
-<xmp style="display:none;">
+<xmp>
 <div class="textcontainer">
 <p class="margin">   </p>
 
@@ -47,7 +47,69 @@ To build this circuit, I used an ESP32 microcontroller, three 1k ohm resistors, 
 The microcontroller was able to take in the changing resistance of the photoresistor and depending on the value, offer power to each of the LEDs. I tested the circuit a few times and decided on a threshold for the upper and lower bound of each resistor.
 <p class="margin">   </p>
 <p class="margin">   </p>
-<image style = "width: 50%"src = "ldr_code.jpg" alt = "ldrcode"> </image>
+<h4>Code</h4>
+
+<pre class="codebox"><code>int light = 100; // light value
+
+class led {
+  int input_pin;
+  int brightness_threshold;
+
+public:
+
+  led(int pin, int threshold) {
+    input_pin = pin;
+    brightness_threshold = threshold;
+
+    pinMode(input_pin, OUTPUT);
+    digitalWrite(input_pin, LOW);
+  }
+
+  bool shouldBeOn(int light) {
+    return light > brightness_threshold;
+  }
+
+  void turnOn() {
+    digitalWrite(input_pin, HIGH);
+  }
+
+  void turnOff() {
+    digitalWrite(input_pin, LOW);
+  }
+};
+
+led led_r(19, 20);
+led led_y(22, 110);
+led led_g(21, 140);
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(32, INPUT);
+}
+
+void loop() {
+
+  light = analogRead(32);
+  Serial.println(light);
+
+  if (led_r.shouldBeOn(light)) {
+    led_r.turnOn();
+  } else {
+    led_r.turnOff();
+  }
+
+  if (led_y.shouldBeOn(light)) {
+    led_y.turnOn();
+  } else {
+    led_y.turnOff();
+  }
+
+  if (led_g.shouldBeOn(light)) {
+    led_g.turnOn();
+  } else {
+    led_g.turnOff();
+  }
+}</code></pre>
 <p class="margin">   </p>
 <p class="margin">   </p>
 <p class="margin">   </p>
